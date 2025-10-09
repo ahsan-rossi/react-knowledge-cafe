@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Blog from '../Blog/Blog';
 import PropTypes from "prop-types";
 
-const Blogs = ({handleAddToBookmark}) => {
+const Blogs = ({handleAddToBookmark, handleMarkAsRead}) => {
 
     // eslint-disable-next-line no-unused-vars
     const [blogs, setBlogs] = useState([]);
@@ -23,6 +23,7 @@ const Blogs = ({handleAddToBookmark}) => {
                 key={blog.id} 
                 blog={blog}
                 handleAddToBookmark={handleAddToBookmark}
+                handleMarkAsRead={handleMarkAsRead}
             ></Blog>)
            }
         </div>
@@ -30,6 +31,7 @@ const Blogs = ({handleAddToBookmark}) => {
 };
 
 Blogs.propTypes = {
-    handleAddToBookmark: PropTypes.func.isRequired
+    handleAddToBookmark: PropTypes.func.isRequired,
+    handleMarkAsRead: PropTypes.func.isRequired
 };
 export default Blogs;
