@@ -16,9 +16,15 @@ function App() {
     setBookmarks(newBookmarks);
   }
 
-  const handleMarkAsRead = time =>{
+  const handleMarkAsRead = (time, id) =>{
     const newReadingTime = readingTime + time;
     setReadingTime(newReadingTime);
+
+    // const updatedCart = cart.filter(element => element.id != bottle.id);
+
+    const updatedBookmarks = bookmarks.filter(element => element.id !== id);
+    setBookmarks(updatedBookmarks);
+
   } 
   
   return (
